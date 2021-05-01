@@ -4,14 +4,10 @@
       "id": 1,
       "email": "test@testing.com",
       "password": "testingpassword"
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
     }
   ],
+  
+  
   "card": [
     {
       "id": 1,
@@ -22,6 +18,7 @@
       "amount": 2000
     }
   ],
+  
   "payment": [
     {
       "card_num": "0908987876789876",
@@ -46,18 +43,6 @@
       "security": "456",
       "amount": "56.777",
       "id": 3
-    },
-    {
-      "user": {
-        "email": "test@testing.com",
-        "password": "testingpassword"
-      },
-      "card_num": "3456765676789876",
-      "card_name": "Sabur Ahmed",
-      "expiration": "2021-11",
-      "security": "345",
-      "amount": "3455999",
-      "id": 4
     },
     {
       "card_num": "5677",
