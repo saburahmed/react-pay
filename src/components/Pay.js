@@ -4,6 +4,7 @@ import "../styles/Pay.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+
 const customId = "custom-id-yes";
 
 function Pay() {
@@ -54,6 +55,7 @@ function Pay() {
     if (security.length === 3 && card_num.length === 16) {
       const resp = await axios
         .post("http://localhost:3000/payment", {
+          //.post(`http://my-json-server.typicode.com/saburahmed/react-pay/payment`,{
           card_num,
           card_name,
           expiration,

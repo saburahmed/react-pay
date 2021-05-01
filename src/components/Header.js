@@ -4,10 +4,15 @@ import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
 
 function Header({ user }) {
   const history = useHistory();
+
   const handleSignOut = () => {
     localStorage.removeItem("user");
 
     return history.push("/");
+  };
+
+  const handleHistory = () => {
+    return history.push("/notFound");
   };
 
   return (
@@ -47,13 +52,23 @@ function Header({ user }) {
             </Router>
           </li>
         ) : (
-          <li onClick={handleSignOut}>
-            <Router>
-              <Link to="/" id="sign-out">
-                Sign Out
-              </Link>
-            </Router>
-          </li>
+          <>
+            <li>
+              <Router>
+                <Link to="notFound" id="pay-history" onClick={handleHistory}>
+                  Payment History
+                </Link>
+              </Router>
+            </li>
+
+            <li onClick={handleSignOut}>
+              <Router>
+                <Link to="/" id="sign-out">
+                  Sign Out
+                </Link>
+              </Router>
+            </li>
+          </>
         )}
       </ul>
     </nav>
