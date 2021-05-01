@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+main {
+  text-align: center;
+  align-items: center;
+  /* padding-top: 5%; */
+}
+
+.heading {
+  font-size: 30px;
+  color: #60467e;
+  padding-bottom: 1%;
+  padding-top: 5%;
+}
+
+input {
+  width: 350px;
+  height: 50px;
+  border: 1px solid #60467e;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="month"],
+input[type="number"] {
+  padding-left: 10px;
+}
+
+input[type="submit"] {
+  background-color: #60467e;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5%;
+  margin-top: 10%;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.block {
+  display: block;
+}
+
+form {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.left {
+  text-align: left;
+  font-size: 18px;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+.sign-link {
+  text-decoration: none;
+  color: #60467e;
+}
+
+.hr-wrapper {
+  width: 350px;
+  margin: 0 auto;
+  padding: 1% 0 1% 0;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #d90606;
+}

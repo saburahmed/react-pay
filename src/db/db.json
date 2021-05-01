@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@testing.com",
+      "password": "testingpassword"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ],
+  "card": [
+    {
+      "id": 1,
+      "number": "9897567689876789",
+      "cardname": "TEST NAME",
+      "expiry": "May/2015",
+      "security": 123,
+      "amount": 2000
+    }
+  ],
+  "payment": [
+    {
+      "card_num": "0908987876789876",
+      "card_name": "yujtgfdfgh",
+      "expiration": "2021-07",
+      "security": "239",
+      "amount": "556688888888888888",
+      "id": 1
+    },
+    {
+      "card_num": "0908987876789876",
+      "card_name": "yujtgfdfgh",
+      "expiration": "2021-07",
+      "security": "239",
+      "amount": "556688888888888888",
+      "id": 2
+    },
+    {
+      "card_num": "3456898767890987",
+      "card_name": "Sabur Ahmed",
+      "expiration": "2021-06",
+      "security": "456",
+      "amount": "56.777",
+      "id": 3
+    }
+  ]
+}
