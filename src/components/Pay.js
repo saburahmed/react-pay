@@ -17,7 +17,6 @@ function Pay() {
   useEffect(() => {
     const userObj = JSON.parse(localStorage.getItem("user"));
     setUser(userObj);
-    //console.log(userObj.email);
   }, []);
 
   const notifyCard = () =>
@@ -81,11 +80,11 @@ function Pay() {
 
   return (
     <main>
-      <ToastContainer />
       <Header user={user} />
+      <ToastContainer />
       <h2 className="heading">Please Input Your Card Info</h2>
 
-      <form id="signInForm" onSubmit={handlePay}>
+      <form id="signInForm" onSubmit={handlePay} autocomplete="off">
         <label className="block left">Card Number</label>
         <input
           id="cardField"
@@ -134,7 +133,7 @@ function Pay() {
           onChange={(e) => setSecurity(e.target.value)}
         />
 
-        <label className="block left">Amount to be Paid (N)</label>
+        <label className="block left">Amount to be Paid (Naira)</label>
         <input
           id="amountField"
           className="block"

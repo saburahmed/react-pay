@@ -1,4 +1,3 @@
-//import logo from "../images/logo.svg";
 import "../styles/App.css";
 import Signin from "./Signin.js";
 import Pay from "./Pay.js";

@@ -12,12 +12,11 @@ function Signin() {
 
   const history = useHistory();
 
-  const successLogin = () => toast.success(`Login successful`);
-  const failedLogin = () => toast.error(`Login failed`);
+  const failedLogin = () => toast.error(`Email or Password incorrect!`);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) return;
+    //if (!email || !password) return;
 
     const resp = await axios.get(
       `http://localhost:3000/users?email=${email}&&password=${password}`
@@ -25,10 +24,14 @@ function Signin() {
 
     const { data } = resp;
 
+    console.log(resp);
+
     if (data.length) {
       localStorage.setItem("user", JSON.stringify({ email, password }));
       //route to payment page
       return history.push("/pay");
+    } else {
+      failedLogin();
     }
 
     setEmail("");
@@ -38,7 +41,7 @@ function Signin() {
   return (
     <main>
       <Header />
-
+      <ToastContainer />
       <h2 className="heading">Sign In to Your Account</h2>
 
       <form id="signInForm" onSubmit={handleSubmit}>
