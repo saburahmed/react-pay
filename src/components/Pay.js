@@ -64,14 +64,17 @@ function Pay() {
 
     if (security.length === 3 && card_num.length === 16) {
       const resp = await axios
-        .post("http://localhost:3000/payment", {
-          //.post(`http://my-json-server.typicode.com/saburahmed/react-pay/payment`,{
-          card_num,
-          card_name,
-          expiration,
-          security,
-          amount,
-        })
+        //.post("http://localhost:3000/payment", {
+        .post(
+          `http://my-json-server.typicode.com/saburahmed/react-pay/payment`,
+          {
+            card_num,
+            card_name,
+            expiration,
+            security,
+            amount,
+          }
+        )
         .then((resp) => {
           successPay();
 

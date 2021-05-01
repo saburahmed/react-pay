@@ -6,8 +6,6 @@
       "password": "testingpassword"
     }
   ],
-  
-  
   "card": [
     {
       "id": 1,
@@ -18,7 +16,6 @@
       "amount": 2000
     }
   ],
-  
   "payment": [
     {
       "card_num": "0908987876789876",
@@ -131,6 +128,14 @@
       "security": "345",
       "amount": "56789876",
       "id": 15
+    },
+    {
+      "card_num": "4567890989878987",
+      "card_name": "Sabur Ahmed",
+      "expiration": "2021-06",
+      "security": "446",
+      "amount": "50000",
+      "id": 16
     }
   ]
 }
