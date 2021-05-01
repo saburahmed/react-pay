@@ -20,7 +20,7 @@ function Signin() {
 
     const resp = await axios.get(
       //`http://localhost:3000/users?email=${email}&&password=${password}`
-      `http://my-json-server.typicode.com/saburahmed/react-pay/users?email=${email}&&password=${password}`
+      `https://my-json-server.typicode.com/saburahmed/react-pay/users?email=${email}&&password=${password}`
     );
 
     const { data } = resp;

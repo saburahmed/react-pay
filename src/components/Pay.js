@@ -66,7 +66,7 @@ function Pay() {
       const resp = await axios
         //.post("http://localhost:3000/payment", {
         .post(
-          `http://my-json-server.typicode.com/saburahmed/react-pay/payment`,
+          `https://my-json-server.typicode.com/saburahmed/react-pay/payment`,
           {
             card_num,
             card_name,
