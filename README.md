@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# How to use
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run "git clone https://github.com/saburahmed/react-pay.git"
 
-## Available Scripts
+## Then
 
 In the project directory, you can run:
+
+### `npm install` or `npm i`
+
+To install all the node modules
 
 ### `npm start`
 
@@ -13,6 +17,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `json-server --watch db.json`
+
+Run this when you are in the project's db directory, to be able to access the login and payment information from the created fake API.\
+The test email is "test@testing.com".\
+The test password is "testingpassword".\
+Check the db.json file to check the format of the fake db structure.
 
 ### `npm test`
 
