@@ -52,7 +52,7 @@ function Header({ user }) {
             </Router>
           </li>
         ) : (
-          <>
+          <div id="payment-nav">
             <li>
               <Router>
                 <Link to="notFound" id="pay-history" onClick={handleHistory}>
@@ -68,7 +68,7 @@ function Header({ user }) {
                 </Link>
               </Router>
             </li>
-          </>
+          </div>
         )}
       </ul>
     </nav>

@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import Header from "./Header";
 import "../styles/Pay.css";
 import { ToastContainer, toast } from "react-toastify";
+import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
@@ -14,6 +15,15 @@ function Pay() {
   const [expiration, setExpiration] = useState("");
   const [security, setSecurity] = useState("");
   const [amount, setAmount] = useState("");
+
+  //let history = useHistory();
+
+  // const notUser = () => {
+  //   if (!user) {
+  //     history.push("/");
+  //   }
+  // };
+  // notUser();
 
   useEffect(() => {
     const userObj = JSON.parse(localStorage.getItem("user"));

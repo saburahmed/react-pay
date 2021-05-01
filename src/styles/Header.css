@@ -29,6 +29,11 @@
   border-radius: 5px;
 }
 
-/* #sign-out {
-  padding-left: 250px;
-} */
+#pay-history {
+  padding: 0px 60px 0px 120px;
+}
+
+#payment-nav {
+  display: flex;
+  justify-content: space-around;
+}
