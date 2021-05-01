@@ -1,6 +1,6 @@
 # How to use
 
-Run "git clone https://github.com/saburahmed/react-pay.git"
+In your command line, run "git clone https://github.com/saburahmed/react-pay.git"
 
 ## Then
 
