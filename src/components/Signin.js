@@ -3,12 +3,17 @@ import "../styles/Signin.css";
 import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
 import Header from "./Header.js";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const history = useHistory();
+
+  const successLogin = () => toast.success(`Login successful`);
+  const failedLogin = () => toast.error(`Login failed`);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +27,6 @@ function Signin() {
 
     if (data.length) {
       localStorage.setItem("user", JSON.stringify({ email, password }));
-
       //route to payment page
       return history.push("/pay");
     }
@@ -34,6 +38,7 @@ function Signin() {
   return (
     <main>
       <Header />
+
       <h2 className="heading">Sign In to Your Account</h2>
 
       <form id="signInForm" onSubmit={handleSubmit}>

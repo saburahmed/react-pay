@@ -1,11 +1,10 @@
 import { React, useEffect, useState } from "react";
-import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
 import Header from "./Header";
 import "../styles/Pay.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-//import { BrowserRouter as Router, Link } from "react-router-dom";
+const customId = "custom-id-yes";
 
 function Pay() {
   const [user, setUser] = useState("");
@@ -18,18 +17,34 @@ function Pay() {
   useEffect(() => {
     const userObj = JSON.parse(localStorage.getItem("user"));
     setUser(userObj);
+    //console.log(userObj.email);
   }, []);
 
   const notifyCard = () =>
-    toast.error("The number should not be more than or less than 16");
-  const notifyCVV = () => toast.error(`CVV not correct`);
-  const failedPay = () => toast.error(`Oops! Something went wrong`);
-  const successPay = () => toast.success(`Payment successful`);
+    toast.error("Card number should not be more than or less than 16", {
+      toastId: customId,
+    });
+  const notifyCVV = () =>
+    toast.error(`CVV not correct`, {
+      toastId: customId,
+    });
+  const failedPay = () =>
+    toast.error(`Oops! Something went wrong`, {
+      toastId: customId,
+    });
+  const successPay = () =>
+    toast.success(`Payment successful`, {
+      toastId: customId,
+    });
 
   const lengthCheck = () => {
-    (card_num.length > 16 || card_num.length < 16) && notifyCard();
+    if (card_num.length !== 16) {
+      notifyCard();
+    }
 
-    (security.length > 3 || security.length < 3) && notifyCVV();
+    if (security.length !== 3) {
+      notifyCVV();
+    }
   };
 
   const handlePay = async (e) => {
@@ -37,46 +52,31 @@ function Pay() {
 
     lengthCheck();
 
-    const resp = await axios
-      .post("http://localhost:3000/payment", {
-        card_num,
-        card_name,
-        expiration,
-        security,
-        amount,
-      })
-      .then((resp) => {
-        successPay();
+    if (security.length === 3 && card_num.length === 16) {
+      const resp = await axios
+        .post("http://localhost:3000/payment", {
+          card_num,
+          card_name,
+          expiration,
+          security,
+          amount,
+        })
+        .then((resp) => {
+          successPay();
 
-        setCardNum("");
-        setCardName("");
-        setExpiration("");
-        setExpiration("");
-        setSecurity("");
-        setAmount("");
-      })
-      .catch((error) => {
-        //console.log(error);
-        failedPay(error);
-      });
-
-    // if (!email || !password) return;
-
-    // const resp = await axios.get(
-    //   `http://localhost:3000/users?email=${email}&&password=${password}`
-    // );
-
-    // const { data } = resp;
-
-    // if (data.length) {
-    //   localStorage.setItem("user", JSON.stringify({ email, password }));
-
-    //   //route to payment page
-    //   return history.push("/pay");
-    // }
-
-    // setEmail("");
-    // setPassword("");
+          setCardNum("");
+          setCardName("");
+          setExpiration("");
+          setExpiration("");
+          setSecurity("");
+          setAmount("");
+        })
+        .catch((error) => {
+          failedPay();
+        });
+    } else {
+      failedPay();
+    }
   };
 
   return (
