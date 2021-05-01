@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 
 ### `json-server --watch db.json`
 
-Run this when you are in the project's db directory, to be able to access the login and payment information from the created fake API.\
+Run in the root folder, to be able to access the login and payment information from the created fake API.\
 The test email is "test@testing.com".\
 The test password is "testingpassword".\
 Check the db.json file to check the format of the fake db structure.
